@@ -84,24 +84,30 @@
             background: #ffffcc;
             padding: 0 2px;
         }
-        /* ── Simple Photo (Smaller) ── */
-        .trip-photo {
+
+        /* ── Photo styling: consistent, smaller, responsive ── */
+        .dreamy-photo {
             margin: 16px auto;
             display: block;
-            width: 200px;  /* Fixed width in pixels */
+            width: 200px;          /* fixed width in pixels */
+            max-width: 100%;
         }
-        
-        .trip-photo img {
+
+        .dreamy-photo img {
             width: 100%;
             height: auto;
             display: block;
+            border-radius: 0;       /* keep it clean */
+            box-shadow: none;
         }
-        
+
+        /* even smaller on mobile */
         @media (max-width: 640px) {
-            .trip-photo {
-                width: 150px;  /* Even smaller on mobile */
+            .dreamy-photo {
+                width: 150px;
             }
         }
+
         /* ── Footer ── */
         .footer {
             margin-top: 40px;
@@ -123,9 +129,6 @@
             .trip-place {
                 font-size: 18px;
             }
-            .dreamy-photo {
-                margin: 14px 0;
-            }
         }
     </style>
 </head>
@@ -143,28 +146,30 @@
         <div class="trip-place">✦ Osaka</div>
         <div class="trip-date">June 2026</div>
 
-        <!-- Photo 1: Dreamy fade -->
-       
-
         <div class="trip-reflection">
             I'm a big fan of solo travels. I went to 4 places in a month alone.
         </div>
 
+        <!-- Photo 1 -->
         <div class="dreamy-photo">
             <img src="https://i.imgur.com/4odZlIF.jpeg" alt="Osaka night" />
         </div>
 
-        <!-- Photo 2: Dreamy fade -->
-       
         <div class="trip-reflection">
             I met lots of friends there — it taught me <span class="highlight">resilience</span>.
             Every conversation, every unexpected turn, every quiet moment alone in a 
             crowded city shaped something new in me.
         </div>
 
-        <!-- Photo 3: Dreamy fade -->
+        <!-- Photo 2 -->
         <div class="dreamy-photo">
-            <img src="https://i.imgur.com/ogPXAuw.jpeg" alt="Osaka night" />
+            <img src="https://i.imgur.com/ogPXAuw.jpeg" alt="Osaka street" />
+        </div>
+
+        <!-- extra reflection (optional) but keeps the flow -->
+        <div class="trip-reflection" style="margin-top: 12px;">
+            <span class="highlight">✨</span> walking through Dotonbori at midnight, 
+            the neon signs felt like old friends.
         </div>
 
     </div>
