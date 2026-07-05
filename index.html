@@ -251,7 +251,7 @@
         │   └── <a data-folder="about" href="#">intro.txt</a>
         ├── <a class="folder" data-folder="photos" href="#">photos</a>
         │   └── <a data-folder="photos" href="#">gallery.txt</a>
-        └──  <a class="folder" data-folder="contact" href="#">contact</a>
+        └── <a class="folder" data-folder="contact" href="#">contact</a>
             └── <a data-folder="contact" href="#">contact.txt</a>
     </div>
 
@@ -260,72 +260,68 @@
     <!-- ABOUT -->
     <div class="folder-content" id="folder-about">
         <a class="back-link" data-close="about">← ..</a>
-        <h2>about_me </h2>
+        <h2>about_me</h2>
 
         <div class="about-grid">
             <div class="about-photo">
-                <!-- Replace src with your own photo -->
-                <img src="https://i.imgur.com/BrFumwO.jpeg" alt="portrait" />
+                <img src="https://i.imgur.com/BrFumwO.jpeg" alt="Portrait of Ivy Liu" />
             </div>
             <div class="about-text">
-                <p>
-                    ABOUT ME
-                </p>
+                <p><strong>ABOUT ME</strong></p>
 
                 <p>
-    Hello. I am a Biomedical Engineering student at City University of Hong Kong. 
-    Beyond my academic work, I have equal fascination towards photography, art, 
-    philosophy, technology, music, and film.
+                    Hello. I am a Biomedical Engineering student at City University of Hong Kong. 
+                    Beyond my academic work, I have equal fascination towards photography, art, 
+                    philosophy, technology, music, and film.
                 </p>
                 
                 <p>
-    My professional life includes healthcare consultancy, data analysis, and mentoring, 
-    often at the intersection of innovation, education, and community impact.
+                    My professional life includes healthcare consultancy, data analysis, and mentoring, 
+                    often at the intersection of innovation, education, and community impact.
                 </p>
                 
                 <p>
-    I am currently based in Hong Kong. I was born and raised here, and the city's mix 
-    of mountains, sea, and neon has shaped both my curiosity and my work.
+                    I am currently based in Hong Kong. I was born and raised here, and the city's mix 
+                    of mountains, sea, and neon has shaped both my curiosity and my work.
                 </p>
                 
                 <p style="margin-top:12px;">
-                    <em>"Most people are other people. 
-                        Their thoughts are someone else's opinions, their lives a mimicry, their passions a quotation."</em>
+                    <em>"Most people are other people. Their thoughts are someone else's opinions, 
+                    their lives a mimicry, their passions a quotation."</em>
                 </p>
             </div>
         </div>
     </div>
 
     <!-- PHOTOS / GALLERY -->
-<div class="folder-content" id="folder-photos">
-    <a class="back-link" data-close="photos">← ..</a>
-    <h2>🖼️ photos / gallery.txt</h2>
-    <p style="margin-top: 12px;">
-        View my full photography portfolio on 
-        <a href="https://vsco.co/ivyliulittlespace/gallery" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           style="color: #0000ee; text-decoration: underline; font-weight: bold;">
-            VSCO
-        </a>.
-    </p>
-
-</div>
+    <div class="folder-content" id="folder-photos">
+        <a class="back-link" data-close="photos">← ..</a>
+        <h2>photos / gallery.txt</h2>
+        <p style="margin-top: 12px;">
+            View my full photography portfolio on 
+            <a href="https://vsco.co/ivyliulittlespace/gallery" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               style="color: #0000ee; text-decoration: underline; font-weight: bold;">
+                VSCO
+            </a>.
+        </p>
+    </div>
 
     <!-- CONTACT -->
     <div class="folder-content" id="folder-contact">
         <a class="back-link" data-close="contact">← ..</a>
-        <h2> contact </h2>
+        <h2>contact</h2>
         <p><strong>Email</strong> <a href="mailto:ivyliu.lcc@gmail.com">ivyliu.lcc@gmail.com</a></p>
-        <p><strong>LinkedIn</strong> <a href="#">https://www.linkedin.com/in/ivy-l-276648240/</a></p>
+        <p><strong>LinkedIn</strong> <a href="https://www.linkedin.com/in/ivy-l-276648240/" target="_blank" rel="noopener noreferrer">linkedin.com/in/ivy-l-276648240</a></p>
     </div>
 
     <!-- ====== FOOTER ====== -->
-<footer style="margin-top:40px; padding-top:20px; font-size:12px; color:#bbb; text-align:center;">
-    thanks for visiting. ✦
-</footer>
+    <footer style="margin-top:40px; padding-top:20px; font-size:12px; color:#bbb; text-align:center;">
+        thanks for visiting. ✦
+    </footer>
 
-</div> 
+</div>
 
 <!-- ====== JAVASCRIPT: folder toggling ====== -->
 <script>
@@ -334,14 +330,13 @@
         const treeView = document.getElementById('treeView');
         const folders = {
             about: document.getElementById('folder-about'),
-            projects: document.getElementById('folder-projects'),
             photos: document.getElementById('folder-photos'),
             contact: document.getElementById('folder-contact'),
         };
 
         // ── helper: close all folders ──
         function closeAll() {
-            Object.values(folders).forEach(el => {
+            Object.values(folders).forEach(function(el) {
                 if (el) el.classList.remove('open');
             });
         }
@@ -349,11 +344,10 @@
         // ── helper: open a specific folder ──
         function openFolder(id) {
             closeAll();
-            const target = folders[id];
+            var target = folders[id];
             if (target) {
                 target.classList.add('open');
-                // scroll to folder content
-                setTimeout(() => {
+                setTimeout(function() {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }, 80);
             }
@@ -361,10 +355,10 @@
 
         // ── click handler for tree links (folder navigation) ──
         treeView.addEventListener('click', function(e) {
-            const link = e.target.closest('a[data-folder]');
+            var link = e.target.closest('a[data-folder]');
             if (link) {
                 e.preventDefault();
-                const folderId = link.getAttribute('data-folder');
+                var folderId = link.getAttribute('data-folder');
                 if (folderId && folders[folderId]) {
                     openFolder(folderId);
                 }
@@ -372,17 +366,17 @@
         });
 
         // ── click handler for "back" links inside folder content ──
-        document.querySelectorAll('.back-link[data-close]').forEach(function(backLink) {
-            backLink.addEventListener('click', function(e) {
+        var backLinks = document.querySelectorAll('.back-link[data-close]');
+        for (var i = 0; i < backLinks.length; i++) {
+            backLinks[i].addEventListener('click', function(e) {
                 e.preventDefault();
-                const folderId = this.getAttribute('data-close');
+                var folderId = this.getAttribute('data-close');
                 if (folderId && folders[folderId]) {
                     folders[folderId].classList.remove('open');
-                    // scroll back to top of tree
                     treeView.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
+        }
 
         // ── (optional) open 'about' by default on first visit ──
         // openFolder('about');
