@@ -84,32 +84,17 @@
             background: #ffffcc;
             padding: 0 2px;
         }
-
-        /* ── Dreamy Photo: Soft Blur / Fade Edges ── */
-        .dreamy-photo {
+/* ── Simple Photo ── */
+        .trip-photo {
             margin: 20px 0;
             display: block;
-            mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
-            transition: mask-image 0.6s ease, -webkit-mask-image 0.6s ease;
         }
 
-        .dreamy-photo img {
+        .trip-photo img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.5s ease;
         }
-
-        .dreamy-photo:hover {
-            mask-image: radial-gradient(ellipse at center, black 90%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 90%, transparent 100%);
-        }
-
-        .dreamy-photo:hover img {
-            transform: scale(1.01);
-        }
-
         /* ── Footer ── */
         .footer {
             margin-top: 40px;
